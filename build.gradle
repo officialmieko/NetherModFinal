@@ -1,0 +1,32 @@
+plugins {
+    id 'fabric-loom' version '1.6.12'
+    id 'maven-publish'
+}
+
+group = 'com.example' // Change to your mod's package
+version = '1.0.0'
+
+repositories {
+    maven { url 'https://repo.spongepowered.org/maven/' } // for Mixin
+    maven { url 'https://maven.fabricmc.net/' } // for Fabric
+    mavenCentral() // general libraries
+}
+
+dependencies {
+    // Minecraft, mappings, and Fabric loader
+    minecraft 'com.mojang:minecraft:1.20.1'
+    mappings 'net.fabricmc:yarn:1.20.1+build.10:v2'
+    modImplementation 'net.fabricmc:fabric-loader:0.15.7'
+
+    // Fabric API (correct version)
+    modImplementation 'net.fabricmc.fabric-api:fabric-api:0.84.0+1.20.1'
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.release.set(17) // Use the correct Java version (Java 17 for MC 1.20.1)
+}
+
+java {
+    withSourcesJar()
+}

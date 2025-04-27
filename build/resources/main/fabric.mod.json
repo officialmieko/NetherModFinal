@@ -1,0 +1,23 @@
+{
+	"schemaVersion": 1,
+	"id": "netherportalcontrol",
+	"version": "1.0.0",
+	"name": "Nether Portal Control",
+	"description": "A mod that locks Nether portal activation until the Wither is defeated.",
+	"authors": [
+	  "MaxTS"
+	],
+	"contact": {},
+	"license": "MIT",
+	"environment": "*",
+	"entrypoints": {
+	  "main": [
+		"com.maxts.netherportalcontrol.NetherPortalControlMod"
+	  ]
+	},
+	"depends": {
+	  "fabricloader": ">=0.14.0",
+	  "fabric": "*",
+	  "minecraft": "1.20.1"
+	}
+  }  
